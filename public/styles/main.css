@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --text-color: #7B7B7B;
+    --bg-color: #F0F0F0;
+}
+
 body {
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;

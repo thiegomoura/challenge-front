@@ -2,56 +2,66 @@ header {
     box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.1);
     /* box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1); */
     position: relative;
-    max-width: 1366px;
     margin: 0 auto;
 }
 
-header nav {
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 92%;
+    padding: 1rem 0;
+    margin: 0 auto;
+}
+
+.header-container nav {
     display: flex;
     margin: 0 auto;
-    padding: 16px 42px;
     flex: 1;
-
     justify-content: space-between;
 }
 
-header nav img {
+.header-container nav img {
     max-height: 48px;
 }
 
-header nav ul {
+.header-container nav ul {
     display: flex;
     list-style: none;
 }
 
-header nav ul.menu {
-    flex: 1;
+.header-container nav ul.menu {
     align-items: center;
     justify-content: space-between;
     margin: 0 100px 0 50px;
 }
 
-header nav ul.menu li{
-    font-size: 0.975rem;
+.header-container nav ul.menu li a {
+    font-size: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
 }
 
-header nav ul:last-child {
+.header-container nav ul.menu li {
+    margin-right: 1rem;
+}
+
+.header-container nav ul:last-child {
     width: 200px;
     justify-content: space-between;
 }
 
-header nav ul li:last-child {
+.header-container nav ul li a:last-child {
     margin-right: 0;
 }
 
-header .cart {
+.cart {
     width: 320px;
-    background-color: #F0F0F0;
+    background-color: var(--bg-color);
     position: absolute;
     right: 16px;
 }
 
-header .cart ul {
+.cart ul {
     height: 23em;
     padding: 0 8px;
     line-height: 2em;
@@ -59,47 +69,46 @@ header .cart ul {
     overflow-x: hidden;
 }
 
-header .cart ul li {
+.cart ul li {
     display: flex;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-header .cart .item-img img {
+.cart .item-img img {
     max-width: 100px;
     padding: 8px;
 }
 
-header .cart ul li div.item-description {
+.cart ul li div.item-description {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 8px 0px;
 }
 
-header .cart ul li div.item-description span {
+.cart ul li div.item-description span {
     line-height: 0.9rem;
 }
 
-header .cart ul li div.item-description div.item-amount-and-cost {
+.cart ul li div.item-description div.item-amount-and-cost {
     display: flex;
     justify-content: space-between;
     max-width: 80%;
     margin-top: 12px;
 }
 
-
-header .cart ul li div.item-description div.item-amount-and-cost > strong {
-    color:rgb(0,188,14);
+.cart ul li div.item-description div.item-amount-and-cost>strong {
+    color: rgb(0, 188, 14);
     margin-right: 4px;
 }
 
-header .cart ul li div.item-description div.item-amount-and-cost span {
+.cart ul li div.item-description div.item-amount-and-cost span {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-header .cart div.total {
+.cart div.total {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,21 +116,21 @@ header .cart div.total {
     font-size: 1.1rem;
 }
 
-header .cart div.total span {
-   color: #7B7B7B;
+.cart div.total span {
+    color: #7B7B7B;
 }
 
-header .cart div.total span strong {
+.cart div.total span strong {
     color: #7B7B7B;
- }
+}
 
-header .cart a {
+.cart a {
     display: flex;
     flex: 1;
     justify-content: center;
     align-items: center;
     color: #fff;
-    background-color: rgb(0,188,14);
+    background-color: rgb(0, 188, 14);
     text-decoration: none;
     height: 48px;
 }
@@ -138,7 +147,6 @@ header .cart a {
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;

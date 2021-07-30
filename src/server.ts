@@ -17,5 +17,5 @@ app.get('/', async (req, res) => {
 
 const port = process.env.SERVER_PORT
 app.listen(port || 3333, () => {
-    console.log(`👍 server is running on port ${port || 3333}`)
+    console.log(`⚡ server is listening on port ${port || 3333}`)
 })
