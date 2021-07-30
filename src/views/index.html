@@ -13,13 +13,21 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
 </head>
 
 <body>
     <header>
         <div class="header-container">
-            <img src="./assets/images/logo/agencia-eplus-n-logo.png" alt="Agencia ePlus logo" class="logo-img">
             <nav>
+                <img src="./assets/images/logo/agencia-eplus-n-logo.png" alt="Agencia ePlus logo" class="logo-img">
+                <ul class="menu-toggle">
+                    <li>
+                        <a href="#">
+                            <span id="icon-menu-toggle" class="material-icons md-48">menu</span>
+                        </a>
+                    </li>
+                </ul>
                 <ul class="menu">
                     <li><a href="#">Lorem ipsum</a>
                     <li><a href="#">Lorem ipsum</a>
@@ -114,9 +122,17 @@
             </div>
             <a href="#"><strong>FINALIZAR COMPRA</strong></a>
         </div>
+        <div id ="menu-toggle" class="menu-toggle">
+            <ul class="menu">
+                <li><a href="#">Lorem ipsum</a>
+                <li><a href="#">Lorem ipsum</a>
+                <li><a href="#">Lorem ipsum</a>
+                <li><a href="#">Lorem ipsum</a>
+                <li><a href="#">Lorem ipsum</a>
+            </ul>
+        </div>
     </header>
-    <main></main>
-    <footer></footer>
 </body>
 <script src="./scripts/cart.js"></script>
+
 </html>

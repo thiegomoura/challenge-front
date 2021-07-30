@@ -3,6 +3,7 @@ header {
     position: relative;
     margin: 0 auto;
     background-color: #fff;
+    width: 100vw;
 }
 
 .header-container {
@@ -11,18 +12,19 @@ header {
     width: 92%;
     padding: 1rem 0;
     margin: 0 auto;
-    background-color: #fff;
 }
 
 .header-container nav {
     display: flex;
     margin: 0 auto;
     flex: 1;
+    align-items: center;
     justify-content: space-between;
 }
 
-.header-container nav img {
-    max-height: 48px;
+.header-container img {
+    max-height: 56px;
+    transition: max-height 0.2s;
 }
 
 .header-container nav ul {
@@ -31,9 +33,12 @@ header {
 }
 
 .header-container nav ul.menu {
+    display: flex;
+    flex: 1;
+    max-width: 800px;
     align-items: center;
     justify-content: space-between;
-    margin: 0 100px 0 50px;
+    padding-left: 1.5rem;
 }
 
 .header-container nav ul.menu li a {
@@ -73,13 +78,56 @@ header {
     margin-right: 0;
 }
 
+.header-container nav ul.menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.header-container nav ul.menu-toggle li a span {
+    color: #000;
+}
+
+div.menu-toggle {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    display: none;
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+}
+
+div.menu-toggle.open {
+    display: block;
+    transform: translateY(0%);
+}
+
+div.menu-toggle ul {
+    list-style: none;
+}
+
+div.menu-toggle ul li {
+    padding: 0.5rem;
+}
+
+div.menu-toggle ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
 .cart {
     width: 320px;
     background-color: var(--bg-color);
     position: absolute;
-    right: 16px;
+    right: 1rem;
     z-index: -1;
-    transform: translateY(-100%);
+    transform: translateY(-150%);
     transition: transform 0.4s;
 }
 
