@@ -1,6 +1,5 @@
 header {
     box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.1);
-    /* box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1); */
     position: relative;
     margin: 0 auto;
 }
@@ -39,6 +38,12 @@ header {
     font-size: 1rem;
     color: var(--text-color);
     text-decoration: none;
+    transition: color 0.2s;
+}
+
+
+.header-container nav ul.menu li a:hover {
+    color: #000;
 }
 
 .header-container nav ul.menu li {
@@ -48,6 +53,19 @@ header {
 .header-container nav ul:last-child {
     width: 200px;
     justify-content: space-between;
+}
+
+.header-container nav ul:last-child li a span{
+    color: #000;
+}
+
+.header-container nav ul:last-child span.select::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    border-bottom: 20px solid var(--bg-color);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
 }
 
 .header-container nav ul li a:last-child {
