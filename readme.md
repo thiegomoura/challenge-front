@@ -1,7 +1,7 @@
 <p align="center">
 <h1>Teste desenvolvedor web</h1>
   <p align="center">
-    API JSON RESTful para cadastro e listagem de informações básicas de veículos e consumo via UI conforme layout.
+    Header and cart for Eccomerce site.
   </p>
 </p>
 
@@ -13,45 +13,16 @@
 
 ## Primeiros passos
 
-Instale as dependências do cliente e servidorinstale as depedencias tanto para o server quanto o cliente:
+Instale as dependências do projeto:
 
 ## Configurando o servidor/backend
 
 ```bash
-# navegue para a pasta do servidor
-$ cd server
 # atualize as depencias utilizando yarn ou outro gerenciador de pacotes
 $ yarn
 ```
 
-Edite as informações abaixo no arquivo `ormconfig.json`, que se encontra na pasta raiz do servidor, preenchendo as informações de necessárias para que o TypeORM realize a conexão com o banco de dados.
-
-```json
-{
-  "type": "mysql", // banco de dados utilizado
-  "host": "localhost", // endereço do banco de dados
-  "port": 3306, // porta do banco de dados
-  "username": "root", // usuário do banco de dados
-  "password": "123321", // senha do banco de dados
-  "database": "test-fullstack" // banco de dados *necessário criar manulmente*
-}
-```
-
-Acesse a [documentação](https://typeorm.io/#/connection-options) documentação para consultar outras possibilidades de configurações e banco de dados suportados pelo TypeORM.
-
-
-### Create database
-
-*Crie o banco de dados configurado no `ormconfig.json`*
-
-Rode as migrations para criar as estruturas de tabelas no banco de dados
-
-```bash
-# rodar migrations
-$ yarn typeorm migration:run
-```
-
-Caso o comando retorne algum erro vefique as configurações inseridas no arquivo `ormconfig.json`.
+Caso queira modificar a portão padrão de execução do servidor, crie um arquivo `.env`, na raiz do servidor, e defina a variável de ambiente seguindo o arquivo `.env.example`.
 
 ### Iniciar servidor
 ```bash
@@ -59,31 +30,6 @@ Caso o comando retorne algum erro vefique as configurações inseridas no arquiv
 $ yarn dev:server
 ```
 
-Com o servidor rodando, **em outro console/terminal** inicie a configuração do cliente.
-
-## Configurando o cliente/frontend
-
-```bash
-# certifique-se de estar na pasta raiz da aplicação e então navegue para a pasta do cliente
-$ cd web
-# atualize as depencias utilizando yarn ou outro gerenciador de pacotes
-$ yarn
-```
-
-### Iniciar cliente
-
-```bash
-# iniciar servidor
-$ yarn start
-```
-
-### Rotas da API
-
-| Método | Rota | Função | Campos obrigatórios | Descrição |
-|--|--|--|--|--|
-| POST | /cars | Cadastra um carro | carName, brand, year, isSold e createdAt | Cadastra as informações de um veiculo na base de dados |
-| GET | /cars | Listar veículos |  | Retorna as informações do veículos cadastrados na API |
-| GET | /cars/:id | Listar veículo | id | Retorna a informações de um veículo específico cadastrado na API |
----
+Com o servidor rodando acessa via browser o endereço padrão http://localhost:3333 ou utilizando a porta que foi configurada no arquivo `.env`
 
 Made with ☕ and 🤯 by [Thiego Moura](https://thiegomoura.github.io/me/)
