@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agência e-Plus | eccomerce and digital marketing</title>
+    <link rel="shortcut icon" href="./assets/images/logo/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,600&display=swap"
@@ -56,73 +57,27 @@
         </div>
         <div class="cart" id="cart">
             <ul>
+                {% for product in products %}
                 <li class="cart-list">
                     <div class="item-img">
-                        <img src="./assets/images/products/note01-samsung-160-160.jpg" alt="">
+                        <img src="{{ product.image }}" alt="">
                     </div>
                     <div class="item-description">
-                        <span>Notebook Samsung IntelR Core i5 [spred]</span>
+                        <span>{{ product.name.substring(0,50) }}...</span>
                         <div class="item-amount-and-cost">
-                            <span><strong>Qtd.:</strong>1</span>
-                            <strong>R$ 7.158,21</strong>
+                            <span><strong>Qtd.:</strong>{{product.quantity}}</span>
+                            <strong>{{ product.bestPriceFormated }}</strong>
                         </div>
                     </div>
                 </li>
-                <li class="cart-list">
-                    <div class="item-img">
-                        <img src="./assets/images/products/note01-samsung-160-160.jpg" alt="">
-                    </div>
-                    <div class="item-description">
-                        <span>Notebook Samsung IntelR Core i5 [spred]</span>
-                        <div class="item-amount-and-cost">
-                            <span><strong>Qtd.:</strong>1</span>
-                            <strong>R$ 7.158,21</strong>
-                        </div>
-                    </div>
-                </li>
-                <li class="cart-list">
-                    <div class="item-img">
-                        <img src="./assets/images/products/note01-samsung-160-160.jpg" alt="">
-                    </div>
-                    <div class="item-description">
-                        <span>Notebook Samsung IntelR Core i5 [spred]</span>
-                        <div class="item-amount-and-cost">
-                            <span><strong>Qtd.:</strong>1</span>
-                            <strong>R$ 7.158,21</strong>
-                        </div>
-                    </div>
-                </li>
-                <li class="cart-list">
-                    <div class="item-img">
-                        <img src="./assets/images/products/note01-samsung-160-160.jpg" alt="">
-                    </div>
-                    <div class="item-description">
-                        <span>Notebook Samsung IntelR Core i5 [spred]</span>
-                        <div class="item-amount-and-cost">
-                            <span><strong>Qtd.:</strong>1</span>
-                            <strong>R$ 7.158,21</strong>
-                        </div>
-                    </div>
-                </li>
-                <li class="cart-list">
-                    <div class="item-img">
-                        <img src="./assets/images/products/note01-samsung-160-160.jpg" alt="">
-                    </div>
-                    <div class="item-description">
-                        <span>Notebook Samsung IntelR Core i5 [spred]</span>
-                        <div class="item-amount-and-cost">
-                            <span><strong>Qtd.:</strong>1</span>
-                            <strong>R$ 7.158,21</strong>
-                        </div>
-                    </div>
-                </li>
+                {% endfor %}
             </ul>
             <div class="total">
-                <span>Total do pedido: <strong>R$ 20.356,95</strong></span>
+                <span>Total do pedido: <strong>{{ totalFormated }}</strong></span>
             </div>
             <a href="#"><strong>FINALIZAR COMPRA</strong></a>
         </div>
-        <div id ="menu-toggle" class="menu-toggle">
+        <div id="menu-toggle" class="menu-toggle">
             <ul class="menu">
                 <li><a href="#">Lorem ipsum</a>
                 <li><a href="#">Lorem ipsum</a>
