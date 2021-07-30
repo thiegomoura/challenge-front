@@ -1,38 +1,89 @@
-![Eplus](https://www.agenciaeplus.com.br/wp-content/themes/eplus/images/agencia-eplus-n-logo.png)
+<p align="center">
+<h1>Teste desenvolvedor web</h1>
+  <p align="center">
+    API JSON RESTful para cadastro e listagem de informações básicas de veículos e consumo via UI conforme layout.
+  </p>
+</p>
 
-# E-Plus Frontend Challenge
+### Desenvolvido com
 
-Seja bem-vindo ao E-Plus Front-end Challenge, considere este o primeiro passo para fazer parte de uma das melhores equipes de ecommerce e marketing digital do Brasil!
+* [NodeJS](https://nodejs.org)
+* [Typescript](https://www.typescriptlang.org/)
+* [Nunjucks](https://mozilla.github.io/nunjucks/)
 
-Para completar o desafio com sucesso você precisará codificar o layout que segue no projeto, para isso será necessário consumir um json via xhttp que retornará uma lista de produtos na resposta do request e servirá para alimentar/manipular o mini-cart.
+## Primeiros passos
 
-Então mãos a obra e bom challenge ;)
+Instale as dependências do cliente e servidorinstale as depedencias tanto para o server quanto o cliente:
 
-## Design
+## Configurando o servidor/backend
 
-- O topo apresentado deve seguir o [seguinte design](https://projects.invisionapp.com/share/NARHXUS6HCF#/357617423_Eplus)
-- Baseado neste layout, faça uma adaptação responsiva para celulares.
+```bash
+# navegue para a pasta do servidor
+$ cd server
+# atualize as depencias utilizando yarn ou outro gerenciador de pacotes
+$ yarn
+```
 
-## Como realizar o teste
+Edite as informações abaixo no arquivo `ormconfig.json`, que se encontra na pasta raiz do servidor, preenchendo as informações de necessárias para que o TypeORM realize a conexão com o banco de dados.
 
-- Faça um fork deste repositório em seu GitHub
-- Adicione ao Readme uma descrição de como executar seu projeto
-- Descreva as funcionalidades do seu desafio, nos conte tudo que fez! Se fez o desafio utilizando pré-processadores, por exemplo, pois usaremos estas informações para avaliá-lo. 
-- O ideal é que este challenge leve até 8h.
-- Faça commits parciais, para que possamos acompanhar o seu desenvolvimento.
-- Em caso de dúvidas, entre em contato com nadia@agenciaeplus.com.br
+```json
+{
+  "type": "mysql", // banco de dados utilizado
+  "host": "localhost", // endereço do banco de dados
+  "port": 3306, // porta do banco de dados
+  "username": "root", // usuário do banco de dados
+  "password": "123321", // senha do banco de dados
+  "database": "test-fullstack" // banco de dados *necessário criar manulmente*
+}
+```
 
-## Dicas
+Acesse a [documentação](https://typeorm.io/#/connection-options) documentação para consultar outras possibilidades de configurações e banco de dados suportados pelo TypeORM.
 
-- Os ícones usados, são todos do Material Design. https://material.io/icons/
-- A fonte utilizada é Montserrat (Está fonte se encontra no google fonts). 
-- Trabalhamos com clientes perfeccionistas, portanto tenha atenção com espaçamentos, tamanhos e estilos de fonte. 
 
-## Critérios de avaliação
+### Create database
 
-- Alcançar os objetivos propostos
-- Qualidade de código
-- Commits parciais, mostrando a linha de desenvolvimento
-- Boa descrição das funcionalidades do desafio
-- Fidelidade ao design proposto
-- Adaptação mobile
+*Crie o banco de dados configurado no `ormconfig.json`*
+
+Rode as migrations para criar as estruturas de tabelas no banco de dados
+
+```bash
+# rodar migrations
+$ yarn typeorm migration:run
+```
+
+Caso o comando retorne algum erro vefique as configurações inseridas no arquivo `ormconfig.json`.
+
+### Iniciar servidor
+```bash
+# iniciar servidor
+$ yarn dev:server
+```
+
+Com o servidor rodando, **em outro console/terminal** inicie a configuração do cliente.
+
+## Configurando o cliente/frontend
+
+```bash
+# certifique-se de estar na pasta raiz da aplicação e então navegue para a pasta do cliente
+$ cd web
+# atualize as depencias utilizando yarn ou outro gerenciador de pacotes
+$ yarn
+```
+
+### Iniciar cliente
+
+```bash
+# iniciar servidor
+$ yarn start
+```
+
+### Rotas da API
+
+| Método | Rota | Função | Campos obrigatórios | Descrição |
+|--|--|--|--|--|
+| POST | /cars | Cadastra um carro | carName, brand, year, isSold e createdAt | Cadastra as informações de um veiculo na base de dados |
+| GET | /cars | Listar veículos |  | Retorna as informações do veículos cadastrados na API |
+| GET | /cars/:id | Listar veículo | id | Retorna a informações de um veículo específico cadastrado na API |
+---
+
+Made with ☕ and 🤯 by [Thiego Moura](https://thiegomoura.github.io/me/)
