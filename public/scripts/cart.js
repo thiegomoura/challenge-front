@@ -6,37 +6,38 @@ let carVisible = true;
 let menuVisible = true;
 
 function openMenu() {
+    menuToggle.classList.toggle("open", menuVisible)
+    menuVisible = !menuVisible
+
+}
+
+function closeMenu() {
+    menuToggle.classList.remove("open");
+    menuVisible = !menuVisible
+}
+
+function openCart() {
     cartIcon.classList.toggle("select")
     cart.classList.toggle("open", carVisible)
     carVisible = !carVisible
 }
 
-function closeMenu() {
+function closeCart() {
     cartIcon.classList.remove("select")
     cart.classList.remove("open")
     carVisible = !carVisible
 }
 
-function openCart() {
-    menuToggle.classList.toggle("open", menuVisible)
-    menuVisible = !menuVisible
-}
-
-function closeCart() {
-    menuToggle.classList.remove("open");
-    menuVisible = !menuVisible
-}
-
 cartIcon.addEventListener("click", () => {
     if (!menuVisible) {
-        closeCart()
+        closeMenu()
     }
     openCart()
 })
 
 iconMenuToggle.addEventListener("click", () => {
     if (!carVisible) {
-        closeMenu
+        closeCart()
     }
     openMenu()
 })
