@@ -77,6 +77,11 @@ header {
     background-color: var(--bg-color);
     position: absolute;
     right: 16px;
+    display: none;
+}
+
+.cart.open {
+    display: block;
 }
 
 .cart ul {
